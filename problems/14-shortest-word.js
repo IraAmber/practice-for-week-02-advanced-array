@@ -14,16 +14,28 @@ console.log(shortestWord('do what you enjoy'));         // 'do'
 
 */
 
-let shortestWord = function(sentence) {
+let shortestWord = function (sentence) {
   // Your code here
-};
+  let words = sentence.split(' ')
+  let shortWord = words[0] // Ініціалізація значенням першого слова
+  words.forEach((word) => {
+    if (word.length <= shortWord.length) {
+      shortWord = word
+    }
+  })
+  return shortWord
+}
+
+console.log(shortestWord('what a wonderful life')) // 'a'
+console.log(shortestWord('the quick brown fox jumps')) // 'the'
+console.log(shortestWord('do what you enjoy')) // 'do'
 
 // Your code here
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-  module.exports = shortestWord;
+  module.exports = shortestWord
 } catch (e) {
-  module.exports = null;
-}
+  module.exports = null
+}

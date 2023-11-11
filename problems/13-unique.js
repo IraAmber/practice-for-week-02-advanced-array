@@ -14,14 +14,24 @@ console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 
 */
 
-let unique = function(array) {
-    // Your code here
-};
+let unique = function (array) {
+  // Your code here
+  let newArray = []
+
+  array.filter((num) => {
+    if (!newArray.includes(num)) {
+      newArray.push(num)
+    }
+  })
+  return newArray
+}
+console.log(unique([11, 7, 8, 10, 8, 7, 7])) // [11, 7, 8, 10]
+console.log(unique(['a', 'b', 'c', 'b'])) // ['a', 'b', 'c']
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-    module.exports = unique;
+  module.exports = unique
 } catch (e) {
-    module.exports = null;
-}
+  module.exports = null
+}
